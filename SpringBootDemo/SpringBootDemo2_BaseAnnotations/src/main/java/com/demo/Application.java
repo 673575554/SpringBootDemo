@@ -50,5 +50,12 @@ public class Application {
 
         DBHelper bean1 = run.getBean(DBHelper.class);
         System.out.println(bean1);
+
+        //6、获取由xml文件配置的组件
+        boolean haha = run.containsBean("haha");
+        boolean hehe = run.containsBean("hehe");
+        System.out.println(haha);
+        System.out.println(hehe);
+
     }
 }

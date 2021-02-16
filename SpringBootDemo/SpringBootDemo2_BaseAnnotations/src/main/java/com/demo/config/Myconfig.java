@@ -1,11 +1,16 @@
 package com.demo.config;
 
 import ch.qos.logback.core.db.DBHelper;
+import com.demo.bean.Car;
 import com.demo.bean.Pet;
 import com.demo.bean.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * 1、配置类里面使用@Bean标注在方法上给容器注册组件，默认是单实例的
@@ -21,6 +26,11 @@ import org.springframework.context.annotation.Import;
 
 @Import({User.class, DBHelper.class})
 @Configuration(proxyBeanMethods = false)  //告诉SpringBoot这是一个配置类 == 配置文件
+@ConditionalOnMissingBean(name = "tom2")  //容器里没有名字为tom2的组件才进行下面配置
+@ImportResource("classpath:beans.xml")
+@EnableConfigurationProperties(Car.class)
+//1、开启Car配置绑定功能
+//2、把Cae组件自动注册到容器中
 public class Myconfig {
 
     /**
