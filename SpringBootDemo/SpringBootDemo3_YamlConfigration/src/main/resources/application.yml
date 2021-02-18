@@ -1,0 +1,42 @@
+person:
+  userName: zhangsan
+
+  boss: true
+  birth: 2020/01/01
+  age: 18
+#  interests: [篮球,足球] -- String[]
+  interests:
+    - 篮球
+    - 足球
+
+#  score:  -- Map<String, Object>
+#    english: 80
+#    math: 90
+  score: {english: 80,math: 90}
+
+#animal: [阿猫,阿狗] -- List<String>
+  animal:
+    - 阿猫
+    - 阿狗
+
+#  salarys: -- Set<Double>
+  salarys:
+    - 9999.99
+    - 9999.98
+
+#  pet:{name: 阿狗,weight: 99.99} -- Pet
+  pet:
+    name: 阿狗
+    weight: 99.99
+
+#  allPets: -- Map<String, List<Pet>>
+  allPets:
+    sick:
+      - {name: 阿狗,weight: 99.99}
+      - name: 阿猫
+        weight: 88.88
+      - name: 阿虫
+        weight: 77.77
+    health:
+      - {name: 阿花,weight: 199.99}
+      - {name: 阿明,weight: 199.99}
