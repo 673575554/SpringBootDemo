@@ -9,7 +9,7 @@ public class FormTestController {
     @GetMapping("/form_layoyts")
     public String form_layouts(){
 
-        return "form_layoyts";
+        return "form/form_layouts";
     }
 
 }
