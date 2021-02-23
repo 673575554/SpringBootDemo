@@ -2,7 +2,9 @@ package com.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@ServletComponentScan("com.demo")
 @SpringBootApplication
 public class DemoApplication {
 
