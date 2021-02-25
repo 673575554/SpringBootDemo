@@ -1,17 +1,38 @@
 package com.demo.controller;
 
+import com.demo.bean.Account;
 import com.demo.bean.User;
+import com.demo.service.AccountService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
+@Slf4j
 @Controller
 public class IndexController {
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    AccountService accountService;
+
+    @ResponseBody
+    @GetMapping("/acct")
+    public Account getByid(@RequestParam("id") Integer id){
+        return accountService.getAcctByid(id);
+    }
+
 
     /**
      * 发送GET请求，来到登录页面
