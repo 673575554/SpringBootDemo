@@ -21,11 +21,14 @@ public class TableController {
     @GetMapping("/dynamic_table")
     public String dynamic_table(Model model){
         //表格内容的遍历
-        List<User> users = Arrays.asList(new User("zhangsan","123"),
-                new User("lisi","123456"),
-                new User("wangwu","54321"),
-                new User("zhaoliu","123"));
-        model.addAttribute("users",users);
+//        List<User> users = Arrays.asList(new User("zhangsan","123"),
+//                new User("lisi","123456"),
+//                new User("wangwu","54321"),
+//                new User("zhaoliu","123"));
+//        model.addAttribute("users",users);
+
+        //从数据库查出user表中的用户进行展示
+
 
         return "/table/dynamic_table";
     }

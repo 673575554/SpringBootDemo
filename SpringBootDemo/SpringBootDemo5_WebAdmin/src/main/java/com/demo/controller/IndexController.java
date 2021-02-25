@@ -1,9 +1,10 @@
 package com.demo.controller;
 
 import com.demo.bean.Account;
+import com.demo.bean.City;
 import com.demo.bean.User;
 import com.demo.service.AccountService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.demo.service.CityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,6 +27,24 @@ public class IndexController {
 
     @Autowired
     AccountService accountService;
+
+    @Autowired
+    CityService cityService;
+
+
+    @ResponseBody
+    @PostMapping("/city")
+    public City saveCity(City city){
+        cityService.saveCity(city);
+        return city;
+    }
+
+    @ResponseBody
+    @GetMapping("/city")
+    public City getCityById(@RequestParam("id") Long id){
+        return cityService.getCityById(id);
+    }
+
 
     @ResponseBody
     @GetMapping("/acct")
