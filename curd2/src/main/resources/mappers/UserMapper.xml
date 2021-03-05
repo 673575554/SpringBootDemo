@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace绑定一个对应Dao/Mapper的接口-->
+<mapper namespace="com.curd2.mapper.BookMapper">
+
+    <insert id="addBook" parameterType="com.curd2.entity.Book">
+        insert into book (name,price) values (#{name},#{price})
+    </insert>
+
+    <update id="updateBook">
+        update book set price=#{price} where name=#{name}
+    </update>
+
+    <delete id="deleteBookById">
+        delete from book where id=#{id}
+    </delete>
+
+    <select id="getBook" resultType="com.curd2.entity.Book">
+        select * from book
+    </select>
+
+</mapper>
