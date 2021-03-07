@@ -20,7 +20,7 @@ public class AdminWebConfig implements WebMvcConfigurer {
                 //拦截所有请求,也会拦截静态资源,也要放行
                 .addPathPatterns("/**")
                 //放行登录页的请求
-                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**","/js/**","/upload");
+                .excludePathPatterns("/","/login","/css/**","/fonts/**","/images/**","/js/**","/upload","/**");
 
     }
 }

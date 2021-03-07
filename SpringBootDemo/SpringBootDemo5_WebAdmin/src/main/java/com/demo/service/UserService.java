@@ -1,7 +1,9 @@
 package com.demo.service;
 
-import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.demo.bean.User;
 
-@Service
-public class UserService {
+public interface UserService extends IService<User> {
+
+
 }

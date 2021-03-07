@@ -44,21 +44,23 @@
         <table  class="display table table-bordered table-striped" id="dynamic-table">
         <thead>
         <tr>
-            <th>Rendering engine</th>
-            <th>Browser</th>
-            <th>Platform(s)</th>
-            <th class="hidden-phone">Engine version</th>
-            <th class="hidden-phone">CSS grade</th>
+            <th>#</th>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="gradeX">
-            <td>Trident</td>
-            <td>Internet
-                Explorer 4.0</td>
-            <td>Win 95+</td>
-            <td class="center hidden-phone">4</td>
-            <td class="center hidden-phone">X</td>
+        <tr class="gradeX" th:each="user,stat:${users}">
+            <td th:text="${stat.count}">#</td>
+            <td th:text="${user.id}">id</td>
+            <td th:text="${user.name}">name</td>
+            <td th:text="${user.age}">name</td>
+            <td >[[${user.email}]]</td>
+            <td>name</td>
+
         </tr>
         </tfoot>
         </table>
